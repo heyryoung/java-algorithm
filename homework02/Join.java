@@ -41,12 +41,35 @@ public class Join {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("=== 회원정보 ===");
+		System.out.println("=== 회원가입 ===");
 		String[] jungbo = {"아이디", "비밀번호", "이름", "생년월일(예) 1980-01-01","성인여부(성인true,미성년false)","키(소수점 첫째자리까지)","몸무게(소수점 첫째자리까지) : ","혈액형(A) : "};
 		String[] userInfo = new String[8];
 		
+		for (int i = 0; i < jungbo.length; i++) {
+			System.out.printf("%s  :  " , jungbo[i]);
+			
+			if(i == 5) {
+				String temp =sc.next();
+				if(temp.equals("true")) {
+					userInfo[i] ="성인";
+				}else {
+					userInfo[i] ="미성년";
+				}
+			}else if(i ==6 ){
+				userInfo[i] = sc.next() + "cm";
+			}else if(i ==7 ){
+				userInfo[i] = sc.next() + "kg";
+			}else if(i ==8 ){	
+				userInfo[i] = sc.next() + "형";
+			}else {
+			userInfo[i] = sc.next();
+			}
+		}
 		
-		
+		System.out.println("=== 회원정보 ===");
+		for (int i = 0; i < jungbo.length; i++) {
+			System.out.printf("%s  :  %s \n " , jungbo[i] , userInfo[i]);
+		}
 		
 	}
 
