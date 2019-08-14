@@ -24,27 +24,29 @@ public class BMI {
 		 */
 
 		double weight, height , yM, BMI = 0.0d;
+		String eval= "";
 		Scanner sc = new Scanner(System.in);
-		
+
 		System.out.println(" >>>>> 몸무게를 입력하세요  :   ");
 		weight = sc.nextDouble();
-		
+
 		System.out.println(">>>>> 키를 입력하세요 :   ");
 		height= sc.nextDouble();
 		yM = height*0.01;
-		
+
 		BMI = weight / (yM*yM);
-		
+
 		if(BMI<=23.0) { 
-			System.out.println(String.format("BMI는 %f로 정상입니다 ", BMI));
+			eval = "정상";
 		}else if(23.0<BMI && BMI<=25.0) {
-			System.out.println(String.format("BMI는 %f로 과체중입니다 ", BMI));
+			eval = "과체중";
 		}else if(25.0<BMI && BMI<=30.0) {
-			System.out.println(String.format("BMI는 %f로 비만입니다 ", BMI));
+			eval = "비만";
 		}else if(30.0<BMI) {
-			System.out.println(String.format("BMI는 %f로 고도비만입니다 ", BMI));
+			eval = "고도비만";
 		}
-		
+		System.out.println(String.format("BMI는 %f로 %S입니다 ", BMI , eval));
+
 	}
 
 }

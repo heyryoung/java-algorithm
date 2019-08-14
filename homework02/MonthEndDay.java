@@ -14,21 +14,26 @@ public class MonthEndDay {
 		 */
 		int month = 0;
 		int days=0;
-		
+
 		Scanner sc = new Scanner(System.in);
-		
+
 		System.out.println(">>>>>>>>>>월을 입력하세요  :");
 		month = sc.nextInt();
-		
+
 		if(month ==2) {
+			
 			days = 29;
+			
 		}else if(month<7) {
+			
 			if(month%2==1) {
 				days = 31;
 			}else {
 				days = 30;
 			}
+			
 		}else {
+			
 			if(month%2==1) {
 				days = 30;
 			}else {
@@ -36,10 +41,9 @@ public class MonthEndDay {
 			}
 			
 		}
-		
+
 		System.out.println(String.format("입력하신 %d월의 말일은 %d입니다.", month, days));
-		
-		
+
 	}
 
 }

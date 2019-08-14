@@ -26,7 +26,7 @@ public class PassOrFail {
 		int total =0;
 		int avg  = 0; 
 		int arr[] = new int[3];
-		String name , eval , hap= "";
+		String name , eval= "";
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -44,17 +44,17 @@ public class PassOrFail {
 		avg = total / 3;
 		
 		if(avg < 70) {
-			hap = "불합격";
+			eval = "불합격";
 		}else if(70<=avg && avg <90 ) {
-			hap = "합격";
+			eval = "합격";
 		}else if (90<=avg ) {
-			hap = "장학생";
+			eval = "장학생";
 		}
 		
 		
 		System.out.println(" 학생           국어        영어        수학        총점        평균        합격여부");
 		System.out.println(" =======================================================");
-		System.out.println(String.format(" %s           %d         %d          %d          %d          %d         %s  " , name, arr[0],arr[1],arr[2], total , avg, hap));
+		System.out.println(String.format(" %s           %d         %d          %d          %d          %d         %s  " , name, arr[0],arr[1],arr[2], total , avg, eval));
 		
 	}
 

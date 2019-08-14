@@ -12,9 +12,9 @@ public class ScoreCalc {
 		숫자값(점수)을 전부 더한 결과값이 나오는 프로그램이 필요합니다.
 		그런데 교수님께서 자꾸 결과값만 보니까 잘 연산이 되었는지 의심이 된다하시네요.
 		그래서 결과만 보이지 말고 입력한 값이 전부 보이게 해달랍니다. 
-		
+
 		화면은 아래와 같습니다.
-		
+
 		더하시려는 숫자를 입력하세요(종료는 -1)
 		> 50
 		더하시려는 숫자를 입력하세요(종료는 -1)
@@ -31,34 +31,30 @@ public class ScoreCalc {
 		Scanner sc = new Scanner(System.in);
 		int  Acc= 0;
 		int loop = 0;
-		int avg= 0;
 		String AccString= "";
-		
-		
+
+
 		while(true) {
 			System.out.println("더하시려는 숫자를 입력하세요(종료는 -1)");
 			int num =0;
 			num = sc.nextInt();
 			if (num == -1) {
 				AccString = 	AccString.substring(0, AccString.length()-1);
-				System.out.printf("현재까지의 누적값은 %s = %d 이고, 평균은 %d 입니다.", AccString , Acc , Acc/loop);
+				System.out.printf("현재까지의 누적값은 %s = %d점 이고, 평균은 %d점 입니다.", AccString , Acc , Acc/loop);
 				break;
 			} 
-			
+
 			Acc += num;
 			AccString += num + "+";
 			loop +=1;
 		}
-		
-		
-		
-		
+
 	}
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 
 }
