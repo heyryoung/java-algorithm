@@ -1,4 +1,4 @@
-package homework01;
+package homework02;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -41,11 +41,12 @@ public class Join {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		Date dt = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		System.out.println("=== 회원정보 ===");
+		String[] jungbo = {"아이디", "비밀번호", "이름", "생년월일(예) 1980-01-01","성인여부(성인true,미성년false)","키(소수점 첫째자리까지)","몸무게(소수점 첫째자리까지) : ","혈액형(A) : "};
+		String[] userInfo = new String[8];
 		
-		String date = sdf.format(dt);
-		System.out.println(date); 
+		
+		
 		
 	}
 
