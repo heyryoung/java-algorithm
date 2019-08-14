@@ -43,7 +43,7 @@ public class Tax {
 				income = sc.nextDouble();
 				tax = income * (rate*0.01);
 
-				System.out.println(String.format("연봉 %f만원을 받으시는 %s님께서 납부할 세금은 %f만원입니다.", income, name, tax));
+				System.out.println(String.format("연봉 %.0f만원을 받으시는 %s님께서 납부할 세금은 %.0f만원입니다.", income, name, tax));
 
 			}else if(flag2 == 0){
 				System.out.println("변경할 세율을 입력하세요  : ");
