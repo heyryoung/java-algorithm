@@ -1,7 +1,5 @@
 package homework02;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Join {
