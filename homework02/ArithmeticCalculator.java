@@ -21,7 +21,6 @@ public class ArithmeticCalculator {
 
 		int a , b, eval  = 0;
 		String  op = "";
-		int mok =0;
 		int nam = 0;
 
 		Scanner sc = new Scanner(System.in);
@@ -39,15 +38,12 @@ public class ArithmeticCalculator {
 		break;
 		case "*": eval = a*b;	
 		break;
-		case "/": mok = a/b; nam = a%b; 	
-		break;
-
-		default : System.out.println("잘못입력하였습니다. 프로그램을 종료합니다.");
+		case "/": eval = a/b; nam = a%b; 	
 		break;
 		}
 
 		if(op.equals("/")) {
-			System.out.println(String.format("%d %s %d = %d[%d]",a, op ,b, mok, nam));		
+			System.out.println(String.format("%d %s %d = %d[%d]",a, op ,b, eval, nam));		
 		}else {
 			System.out.println(String.format("%d %s %d = %d", a, op ,b, eval));
 		}

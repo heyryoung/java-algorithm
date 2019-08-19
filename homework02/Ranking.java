@@ -62,7 +62,6 @@ public class Ranking {
 		for (int i = 0; i < player.length; i++) {
 			System.out.printf(" %d등 : %s 선수 기록 (%f초 ) \n" , i+1 , player[i] , score[i]);
 		}
-
 		
 	}
 

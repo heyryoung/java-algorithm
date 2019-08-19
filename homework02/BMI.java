@@ -34,9 +34,11 @@ public class BMI {
 		height= sc.nextDouble();
 		yM = height*0.01;
 
-		BMI = weight / (yM*yM);
+		BMI = weight /(yM*yM);
 
-		if(BMI<=23.0) { 
+		if(BMI<=18.5) {
+			eval = "저체중";
+		}else if(18.5<BMI&&BMI<=23.0) { 
 			eval = "정상";
 		}else if(23.0<BMI && BMI<=25.0) {
 			eval = "과체중";
@@ -45,7 +47,7 @@ public class BMI {
 		}else if(30.0<BMI) {
 			eval = "고도비만";
 		}
-		System.out.println(String.format("BMI는 %f로 %S입니다 ", BMI , eval));
+		System.out.println(String.format("BMI는 %.2f로 %S입니다 ", BMI , eval));
 
 	}
 

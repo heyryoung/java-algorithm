@@ -24,10 +24,9 @@ public class ReportCard {
 
 		 */	
 
-		int total =0;
-		int avg  = 0; 
+		int total =0, avg  = 0; 
 		int arr[] = new int[3];
-		String name , eval= "";
+		String name ="" , eval= "";
 
 		Scanner sc = new Scanner(System.in);
 
