@@ -40,9 +40,9 @@ public class Ranking {
 			System.out.printf("%s 선수의 기록 : %f 초 \n " ,player[i],score[i] );
 		}
 		
-		for (int i =0 ; i < score.length; i++) {
-			for (int j = 0; j < score.length; j++) {
-				if(score[i]< score[j]) {
+		for (int i =0 ; i < score.length-1; i++) {
+			for (int j = i+1; j < score.length; j++) {
+				if(score[i]> score[j]) {
 					double temp = 0.0d;
 					String tempName = "";
 					
@@ -55,7 +55,7 @@ public class Ranking {
 					player[j] = tempName;
 					
 					
-				}
+				}//선택정렬
 			}
 		}
 		
