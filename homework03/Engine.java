@@ -14,7 +14,7 @@ public class Engine {
 			Scanner sc = new Scanner(System.in);
 			Student student = new Student();
 
-			System.out.println("메뉴 :  0. 종료  1. BMI  2. Ranking  3.HowMuch  4.Join 5.LeapYear 6.MonthEndDay 7.PassOrFail 8.Ranking 9.ScoreCalc 10.Tax 11.TimeCalc   :   ");
+			System.out.println("메뉴 :  0. 종료  1.ArithmeticCalculator 2. BMI  3. HowMuch   4.Join 5.LeapYear 6.MonthEndDay 7.PassOrFail 8.Ranking 9.ScoreCalc 10.Tax 11.TimeCalc   :   ");
 			flag = sc.nextInt();
 
 			switch (flag) {
