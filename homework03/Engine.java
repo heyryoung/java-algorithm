@@ -52,9 +52,40 @@ public class Engine {
 					break;
 
 			case 4: System.out.println("Join");
-					student.getJoin();
+					String userName ="", userId ="" , userPW="", userBD="" , userBt = "";
+					double height1 =0.0, weight1 = 0.0;
+					boolean adult=false;
 		
+		
+					System.out.print(">> 아이디 ");
+					userId = sc.next();
+		
+					System.out.print(">> 비밀번호 : ");
+					userPW = sc.next();
+		
+					System.out.print(">> 이름 : ");
+					userName = sc.next();
+		
+					System.out.print(">> 생년월일(예) 1990-05-05 : ");
+					userBD = sc.next();
+		
+					System.out.print(">> 성인여부(성인true,미성년false) : ");
+					adult = sc.nextBoolean();
+		
+					System.out.print(">> 키(소수점 첫째자리까지) : ");
+					height1 = sc.nextDouble();
+		
+					System.out.print(">> 몸무게(소수점 첫째자리까지) : ");
+					weight1 = sc.nextDouble();
+		
+					System.out.print(">> 혈액형(A) : B형");
+					userBt = sc.next();			
+			
+					result = student.getJoin( userId ,userPW, userName, userBD,  adult , height1 , weight1,userBt);
+		
+					System.out.println(result);
 					break;
+					
 			case 5: System.out.println("LeapYear"); 
 					int temp =0;
 		
@@ -99,22 +130,45 @@ public class Engine {
 					break;
 					
 			case 9: System.out.println("ScoreCalc");
-			student.getScoreCalc();
-
-			break;
+					String [] arry = {"0","0","0",""};
+					while (true) {
+						System.out.println("더하시려는 숫자를 입력하세요(종료는 -1)");
+						arry[0] = sc.next();
+						
+						switch (arry[0]) {
+						case "-1":
+							result =	 student.getScoreCalc(arry);
+							System.out.println(result);
+							return;
+						default :
+							arry[1] = String.valueOf(Integer.parseInt(arry[1]) +Integer.parseInt(arry[0])) ;
+							arry[3] += arry[0] + "+";
+							arry[2] =String.valueOf(Integer.parseInt(arry[2]) +1) ;
+							break;
+						}
+						result =	 student.getScoreCalc(arry);
+		
+					}
+					
 			case 10: System.out.println("Tax"); 
-			student.getTax();
-
-			break;
+					System.out.println(">>> 성함과 연봉을 순서대로 입력하세요    :   ");
+					String user = sc.next();
+					double income = sc.nextDouble();
+					
+					
+					result = student.getTax(user, income);
+					System.out.println(result);		
+					break;
+					
 			case 11: System.out.println("TimeCalc"); 
-			int num =0;
-
-			System.out.print(">>>>>>계산하고 싶은 초단위를 입력하세요   : ");
-			num = sc.nextInt();
-
-			result =student.getTimeCalc(num);
-			System.out.println(result);
-			break;
+					int num =0;
+		
+					System.out.print(">>>>>>계산하고 싶은 초단위를 입력하세요   : ");
+					num = sc.nextInt();
+		
+					result =student.getTimeCalc(num);
+					System.out.println(result);
+					break;
 			}
 
 

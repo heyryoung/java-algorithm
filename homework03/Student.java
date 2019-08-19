@@ -80,38 +80,10 @@ public class Student {
 	}
 
 
-	public void getJoin() {
-		String userName, userId, userPW, userBD , userBt = "";
-		double height , weight = 0.0d;
-		boolean adult;
+	public String  getJoin(String userId , String userPW, String userName, String userBD, boolean adult , double height , double weight, String userBt) {
 
-
-		System.out.print(">> 아이디 ");
-		userId = sc.next();
-
-		System.out.print(">> 비밀번호 : ");
-		userPW = sc.next();
-
-		System.out.print(">> 이름 : ");
-		userName = sc.next();
-
-		System.out.print(">> 생년월일(예) 1990-05-05 : ");
-		userBD = sc.next();
-
-		System.out.print(">> 성인여부(성인true,미성년false) : ");
-		adult = sc.nextBoolean();
-
-		System.out.print(">> 키(소수점 첫째자리까지) : ");
-		height = sc.nextDouble();
-
-		System.out.print(">> 몸무게(소수점 첫째자리까지) : ");
-		weight = sc.nextDouble();
-
-		System.out.print(">> 혈액형(A) : B형");
-		userBt = sc.next();
-
-		System.out.printf("		=== 회원정보 ===\n 아이디 : %s \n 비밀번호 : %s \n이름 : %s \n생년월일(예) : %s \n성인여부(성인true,미성년false) : %s \n 키(소수점 첫째자리까지) : %.1f cm \n몸무게(소수점 첫째자리까지) : %.1f kg\n 혈액형(A) :  %s형" , userId,userPW,userName,userBD, ((adult)? "성인":"미성년"), height, weight, userBt );
-
+		result = String.format("		=== 회원정보 ===\n 아이디 : %s \n 비밀번호 : %s \n이름 : %s \n생년월일(예) : %s \n성인여부(성인true,미성년false) : %s \n 키(소수점 첫째자리까지) : %.1f cm \n몸무게(소수점 첫째자리까지) : %.1f kg\n 혈액형(A) :  %s형" , userId,userPW,userName,userBD, ((adult)? "성인":"미성년"), height, weight, userBt );
+		return result;
 
 	}
 
@@ -217,67 +189,29 @@ public class Student {
 		return result;
 	}
 
-	public String getScoreCalc() {
-
-		int  Acc=0 ,loop = 0;
-		String AccString= "";
-
-		while(true) {
-
-			System.out.println("더하시려는 숫자를 입력하세요(종료는 -1)");
-			int num =0;
-			num = sc.nextInt();
-			if (num == -1) {
-				AccString = 	AccString.substring(0, AccString.length()-1);
+	public String getScoreCalc(String[] arry) {
+		int num = Integer.parseInt(arry[0]);
+		int  Acc= Integer.parseInt(arry[1]) ,loop = Integer.parseInt(arry[2]);
+		String AccString= arry[3];
+		
+			if (arry[0].equals("-1")) {
+				AccString = AccString.substring(0, AccString.length()-1);
 				result = String.format("현재까지의 누적값은 %s = %d점 이고, 평균은 %d점 입니다.", AccString , Acc , Acc/loop);
 				return result;
-			} 
+			} else {
+				return result;
+			}
 
-			Acc += num;
-			AccString += num + "+";
-			loop +=1;
-		}
 	}
 
+	public String getTax(String name, double income) {
 
-	public void getTax() {
+				double rate = 9.7d;
 
-		double rate = 9.7d;
+				double tax = income * (rate*0.01);
 
-		while(true) {
-
-
-			double tax , income = 0.0d;
-			String name = "";
-
-			System.out.print("프로그램을 진행하시려면 1번, 종료하시려면 0번을 입력하세요   : ");
-			int flag = sc.nextInt();
-			switch (flag) {
-			case 1: break;
-			case 0: System.out.println("프로그램 종료"); return;
-			}
-
-			System.out.print("세율 계산은 1번, 세율을 변경 하시려면 0번을 입력하세요   : ");
-			int flag2 = sc.nextInt();
-
-			if(flag2 == 1) {
-				System.out.println(">>> 성함과 연봉을 순서대로 입력하세요    :   ");
-				name = sc.next();
-				income = sc.nextDouble();
-				tax = income * (rate*0.01);
-
-				System.out.println(String.format("연봉 %.0f만원을 받으시는 %s님께서 납부할 세금은 %.0f만원입니다.", income, name, tax));
-
-			}else if(flag2 == 0){
-				System.out.println("변경할 세율을 입력하세요  : ");
-				rate = sc.nextDouble();
-
-				System.out.println(String.format("입력받은 세율은 %f입니다", rate));
-			}else {
-				System.out.println("잘못입력하였습니다.");
-			}
-
-		}
+				result = String.format("연봉 %.0f만원을 받으시는 %s님께서 납부할 세금은 %.0f만원입니다.", income, name, tax);
+				return result;
 
 	}
 
