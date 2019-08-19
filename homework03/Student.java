@@ -129,12 +129,7 @@ public class Student {
 		int total =0, avg  = 0; 
 		String eval= "";
 
-		System.out.println(">>>>>>>이름을 입력하세요 :   ");
-		name = sc.next();
-
-		System.out.println(">>>>>국어 , 영어, 수학 점수를 차례로 입력하세요 :   ");
 		for(int i = 0 ; i<3 ; i++) {
-			arr[i] = sc.nextInt();
 			total += arr[i];
 		}
 

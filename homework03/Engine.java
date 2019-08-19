@@ -43,7 +43,8 @@ public class Engine {
 		
 					System.out.println(">>>>> 키를 입력하세요 :   ");
 					height= sc.nextDouble();
-					student.getBMI(weight , height);
+					result = student.getBMI(weight , height);
+					System.out.println(result);
 					break;
 					
 			case 3: System.out.println("HowMuch"); 
@@ -109,6 +110,8 @@ public class Engine {
 					
 			case 7: System.out.println("PassOrFail");
 					String name ="";
+					System.out.println(">>>>>이름을 입력하세요  :   ");
+					name = sc.next();
 					int arr[] = new int[3];
 					System.out.println(">>>>>국어 , 영어, 수학 점수를 차례로 입력하세요 :   ");
 					for(int i = 0 ; i<3 ; i++) {
