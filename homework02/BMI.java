@@ -23,7 +23,7 @@ public class BMI {
 		        이랍니다.
 		 */
 
-		double weight, height , yM, BMI = 0.0d;
+		double weight, height , yM, BMI = 0.0;
 		String eval= "";
 		Scanner sc = new Scanner(System.in);
 
@@ -32,6 +32,7 @@ public class BMI {
 
 		System.out.println(">>>>> 키를 입력하세요 :   ");
 		height= sc.nextDouble();
+		//BMI = x KG / (y M * y M)
 		yM = height*0.01;
 
 		BMI = weight /(yM*yM);

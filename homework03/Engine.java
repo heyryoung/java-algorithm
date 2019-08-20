@@ -48,8 +48,29 @@ public class Engine {
 					break;
 					
 			case 3: System.out.println("HowMuch"); 
-					student.getHowMuch();
+					int price,  total , dc, num  = 0;
+	
 		
+					System.out.println("얼마입니까?   : ");
+					price = sc.nextInt();
+		
+					System.out.println(String.format("%d원 입니다", price));
+		
+					System.out.println("몇개 드릴까요?   : ");
+					num = sc.nextInt();
+		
+					System.out.println(String.format("%d개 주세요", num));
+		
+					total = num * price ;
+					System.out.println(String.format("%d원 입니다", total));
+		
+					System.out.println("너무 비싸네요. 10% dc해주세요 ");
+				
+					result = student.getHowMuch(total);
+					
+					System.out.println(result);
+					
+					
 					break;
 
 			case 4: System.out.println("Join");
@@ -164,12 +185,12 @@ public class Engine {
 					break;
 					
 			case 11: System.out.println("TimeCalc"); 
-					int num =0;
+					int num1 =0;
 		
 					System.out.print(">>>>>>계산하고 싶은 초단위를 입력하세요   : ");
-					num = sc.nextInt();
+					num1 = sc.nextInt();
 		
-					result =student.getTimeCalc(num);
+					result =student.getTimeCalc(num1);
 					System.out.println(result);
 					break;
 			}

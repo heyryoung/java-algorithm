@@ -54,28 +54,13 @@ public class Student {
 	}
 
 
-	public void getHowMuch() {
-		int price,  total , dc, num  = 0;
-
-
-		System.out.println("얼마입니까?   : ");
-		price = sc.nextInt();
-
-		System.out.println(String.format("%d원 입니다", price));
-
-		System.out.println("몇개 드릴까요?   : ");
-		num = sc.nextInt();
-
-		System.out.println(String.format("%d개 주세요", num));
-
-		total = num * price ;
-		System.out.println(String.format("%d원 입니다", total));
-
-		System.out.println("너무 비싸네요. 10% dc해주세요 ");
-
+	public String getHowMuch(int total) {
+		
+		int dc = 0;
 		dc = total/10;
 		total = total - dc;
-		System.out.println(String.format("%d원 입니다", total));
+		result = String.format("%d원 입니다", total);
+		return result;
 
 	}
 
