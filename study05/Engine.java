@@ -15,7 +15,7 @@ public class Engine {
 			System.out.println("0.종료 1.JOIN 2.정보보기 3.아이디찾기 4.BMI 5.ReportCard 6. Tax ");
 			
 			switch (sc.nextInt()) {
-			case 0: return;
+			case 0: System.out.println("=============종료===========");  return;
 			case 1:System.out.println("===========JOIN============="); 
 				mb = new Member();
 				System.out.print(">> 아이디 ");
