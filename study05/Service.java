@@ -57,7 +57,7 @@ public class Service {
 	
 	public String getTax(Member mb) {
 
-		double rate = 9.7d;
+		double rate = mb.getRate();
 
 		double tax = mb.getSal() * (rate*0.01);
 

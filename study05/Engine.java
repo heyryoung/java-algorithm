@@ -89,7 +89,14 @@ public class Engine {
 				
 				case 6: System.out.println("===========Tax=========="); 
 
-				System.out.println(service.getTax(mb));		
+				System.out.println("1. 세율 변경. 2.세금 계산");
+					if(sc.nextInt()==1) {
+						System.out.println("세율을 입력하세요");
+						mb.setRate(sc.nextDouble());
+					}else {
+						System.out.println(service.getTax(mb));
+					}
+						
 				break;
 			}
 			

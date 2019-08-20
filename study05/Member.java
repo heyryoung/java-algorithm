@@ -4,6 +4,17 @@ public class Member {
 
 	private String userName ,userId, userPW, userBD, userBt;
 	private double height , weight, sal;
+	private double rate=9.7d;
+	
+	public double getRate() {
+		return rate;
+	}
+
+	public void setRate(double rate) {
+		this.rate = rate;
+	}
+
+
 	private boolean adult;
 	
 	private int kor, eng, mat;
