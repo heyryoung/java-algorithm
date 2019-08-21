@@ -1,4 +1,4 @@
-package study05;
+package homework04_member;
 
 public class Member {
 
