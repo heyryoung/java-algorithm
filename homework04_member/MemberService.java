@@ -2,12 +2,13 @@ package homework04_member;
 
 
 public class MemberService {
-	
+
 	public String getBMI(Member mb) {
+
 		double yM= 0.0, BMI = 0.0;
 		String eval= "";
+		
 		yM = mb.getHeight()*0.01;
-
 		BMI = mb.getWeight()/(yM*yM);
 
 		if(BMI<=18.5) {
@@ -21,19 +22,23 @@ public class MemberService {
 		}else if(30.0<BMI) {
 			eval = "고도비만";
 		}
+
 		String result = String.format("BMI는 %.2f로 %S입니다 ", BMI , eval);
+
 		return result;
+
 	}
-	
+
 	public String getReportCard(Member mb) {
 		String result = "";
-		
+
 		int total =0, avg  = 0 ; 
 		String  eval= "";
 
 		int kor = mb.getKor(); 
 		int eng = mb.getEng();
 		int mat = mb.getMat();
+		
 		total = (kor+eng+mat); 
 		avg = (kor+eng+mat) / 3;
 
@@ -47,25 +52,22 @@ public class MemberService {
 
 		result =" 학생           국어        영어        수학        총점        평균        합격여부\n";
 		result += " =======================================================\n";
-		result += String.format(" %s           %d         %d          %d          %d          %d         %s  \n" , mb.getUserName() , kor, eng,mat,total , avg, eval);
+		result += String.format(" %s           %d         %d          %d          %d          %d         %s  \n" , mb.getUserName() , kor, eng, mat, total , avg, eval);
 
-		
 		return result;
-		
+
 	}
-	
-	
+
+
 	public String getTax(Member mb) {
 
 		double rate = mb.getRate();
-
 		double tax = mb.getSal() * (rate*0.01);
 
 		String result = String.format("연봉 %.0f만원을 받으시는 %s님께서 납부할 세금은 %.0f만원입니다.", mb.getSal(), mb.getUserName(), tax);
+		
 		return result;
 
-}
-	
-	
-	
+	}
+
 }
